@@ -191,7 +191,16 @@
       <div class="row justify-content-center">
         <h2>📷 Fotos {{ this.title }} 📷</h2>
       </div>
-      <iframe src="https://drive.google.com/embeddedfolderview?id={{ this.photos }}#grid" style="width:100%; height:600px; border:0;"></iframe>
+      <!-- <iframe src="https://drive.google.com/embeddedfolderview?id={{ this.photos }}#grid" style="width:100%; height:600px; border:0;"></iframe> -->
+      {% set event_photos_urls = ['https://lh3.googleusercontent.com/i23wcdEHB4An8GBiXnB2BYmMq-_Io5StqPT2oQLc0LQyqKVWXrBF8bYknZPf9CE2FuBbPlGKBN5ctUhpHQ8vA2VvYedk1ZN-hlH0iZFk7w7CXnYTiR8LFK3kWDDVi9QJq6wAN6W-yjenMfEx5wlUAcJs_zgqJ8S9o2yXaGFkCHkUG_cuDeZLSgDBUvoAj4VD60hBYlvAlNeNJ7FWoMr3Z-vH7u5Kj4A4e4V5ETRInqe0ByHmZY0Y6OX3aUoSKdBZY6u__wxGCn9MDTYwsYqF2DPLWh933WyPjT1oRxKvGBxZ4ecVRH2MrRGFagJCU4-e3CJB0wkuoETl0AsDmoBg4QBBD2tuFjn7BAaaBJZqw4NK9vEoCzt4DQfyZhPUISnoHXFwSSpi7Shso7bH6KLp_liwq9IOH97oUcTI6NLO7zDI-IFtA-yHTFHMDvOeS42tCevf-JLFEt0bsvvwnsZF2fx_fnvmZ7vCQmRVdFf-KlmsOiZopQOoAFYU0qGPD1HbFI6LWg9K14Z97jFTKqRSaxNtr2GS1V3ZOUMGaAADUonU_8hlGsmq3h79Auv5l3YKZATUDy6dFqZrPzsxTpW3LCLXwVMxv8ySIAR0gPhfX-2nUM6Xru9auV6OflVumsuWTj1t7sUeqA0u8Y8CReA3aad4eE3WblZju_0m1LTj30SSeJHIuPDJVHZwWw=w507-h675-no', 'https://lh3.googleusercontent.com/BgAc_oHVowWz5-bzIaNnypMTye6iFmfO9oXcbFIGI5jq6KnZIAfh3CesUouSURFQGMoS9cpyKNW9e_D_ced-k0jjalqmeKiIiLuOWdr0QS3oI5SGezX9Unw8P8LUhPV3alL1Ms8mfgZ_bOAwCxofYrLd6mFZ8vgq29CIVmutfEw_A24f46pTNIrvLLU3JJe-CgC89G9h0GkI2wBEB-ERvnim-upSGiabn556UeP1gSMpORvSIY6-BCX6dxjOL3bIFYOIg-PZ3hZMIO0x-o3-VnowSllHVmrWe4Vyzx1TX_Zl62z7b0sTMWRrccWBMrp4VWkchQx0zssH6_K_BvqGh-zap1VyXUoGD8wgmWhtmjOqcBgggjST_X4AydeyrI3tSBhcwLQr3p_Yg2AK9pdT5z_pAkFjckEdb6lBc68A9nmCIwtK6hAZL8uItmp7EylUSs9S9AlWkMqSPK2p7bPqfEk5e6IjeRsA1oCCWZnu3Do8Rx-2t5KEQ2hLcFqQWDk-vz2WmxaJXTqWiaxWwgvrJcI2cWpsMCUUmKxo0pEZu4VZYG1k2bOBcIrzDWbiwfaxxx7L_ybNofYWa9FMZXvR9FNQBnvaebwJbS8z_e1AXlNalfJOamyd_yaSp1Nc9mSwxMVK5RQhDnvOTxqTe93dd_of7dad74v5I57AnTI9tNj3ucKzjZuyHfpCUA=w900-h675-no'] %}
+
+      <div id="gallery" style="display:none;">
+      {%- for photo in event_photos_urls -%}
+        <img alt="" src="{{ photo }}"
+          data-image="{{ photo }}"
+          data-description="">
+      {%- endfor -%}
+      </div>
     {% else %}
       <div class="row justify-content-center">
         <h2>📷 ¡Pronto tendremos Fotos disponibles de {{ this.title }}! 📷</h2>
